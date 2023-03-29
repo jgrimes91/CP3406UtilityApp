@@ -11,7 +11,7 @@
         android:id="@+id/time_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Time"
+        android:text="@string/time"
         android:textSize="30sp"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,7 +19,7 @@
         android:id="@+id/interval_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Interval"
+        android:text="@string/interval"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@id/time_title"
         app:layout_constraintTop_toBottomOf="@id/time_title"
@@ -29,7 +29,7 @@
         android:id="@+id/interval_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Minutes"
+        android:hint="@string/minutes"
         android:inputType="numberDecimal"
         android:textSize="30sp"
         app:layout_constraintTop_toBottomOf="@id/time_title"
@@ -39,7 +39,7 @@
         android:id="@+id/break_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Break"
+        android:text="@string/break_tv"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/interval_tv"
@@ -49,7 +49,7 @@
         android:id="@+id/break_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Seconds"
+        android:hint="@string/seconds"
         android:inputType="numberDecimal"
         android:textSize="30sp"
         app:layout_constraintTop_toBottomOf="@id/interval_input"
@@ -57,7 +57,7 @@
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/switch_sound"
-        android:text="Play Sound?"
+        android:text="@string/play_sound"
         android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Save changes"
+        android:text="@string/save_changes"
         app:layout_constraintTop_toBottomOf="@id/switch_sound" />
 
 

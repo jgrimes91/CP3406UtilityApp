@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">EyeCare</string>
+    <string name="time">Time</string>
+    <string name="interval">Interval</string>
+    <string name="minutes">Minutes</string>
+    <string name="break_tv">Break</string>
+    <string name="seconds">Seconds</string>
+    <string name="play_sound">Play Sound?</string>
+    <string name="save_changes">Save changes</string>
 </resources>
