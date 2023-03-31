@@ -11,7 +11,7 @@
         android:id="@+id/timer_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="00:00"
+        android:text="@string/timer"
         android:textAlignment="center"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,17 +24,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        android:text="Start"
+        android:text="@string/start"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/timer_tv"
-        app:layout_constraintEnd_toStartOf="@id/stop_btn"/>
+        app:layout_constraintEnd_toStartOf="@id/cancel_btn"/>
 
     <Button
-        android:id="@+id/stop_btn"
+        android:id="@+id/cancel_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        android:text="Stop"
+        android:text="@string/cancel"
         app:layout_constraintStart_toEndOf="@id/start_btn"
         app:layout_constraintTop_toBottomOf="@id/timer_tv"
         app:layout_constraintEnd_toStartOf="@id/reset_btn"/>
@@ -44,8 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        android:text="Reset"
-        app:layout_constraintStart_toEndOf="@id/stop_btn"
+        android:text="@string/reset"
+        app:layout_constraintStart_toEndOf="@id/cancel_btn"
         app:layout_constraintTop_toBottomOf="@id/timer_tv"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -54,9 +54,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Settings"
+        android:text="@string/settings"
         app:layout_constraintEnd_toEndOf="@id/reset_btn"
         app:layout_constraintStart_toStartOf="@id/start_btn"
-        app:layout_constraintTop_toBottomOf="@id/stop_btn" />
+        app:layout_constraintTop_toBottomOf="@id/cancel_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
