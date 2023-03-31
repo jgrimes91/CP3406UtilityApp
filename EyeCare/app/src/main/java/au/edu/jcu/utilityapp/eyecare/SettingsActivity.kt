@@ -19,9 +19,16 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         val saveButton:Button = findViewById(R.id.save_btn)
-        saveButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            launcher.launch(intent)
+        saveButton.setOnClickListener {saveSettings()
         }
+    }
+
+
+    /**
+     * Saves any changes to preferences made in settings menu and returns to MainActivity.
+     */
+    private fun saveSettings() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
