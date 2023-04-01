@@ -2,37 +2,56 @@ package au.edu.jcu.utilityapp.eyecare
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.view.KeyEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
-import au.edu.jcu.utilityapp.eyecare.databinding.ActivityMainBinding
+import au.edu.jcu.utilityapp.eyecare.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
 
-    var intervalTimer: EyeTimer = EyeTimer()
-    var breakTimer: EyeTimer = EyeTimer()
+//    var intervalTimer: EyeTimer = EyeTimer()
+//    var breakTimer: EyeTimer = EyeTimer()
 
-    lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivitySettingsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val saveButton:Button = findViewById(R.id.save_btn)
-        saveButton.setOnClickListener {saveSettings()
+        binding.saveBtn.setOnClickListener { saveSettings() }
+        binding.intervalInput.setOnKeyListener { view, keyCode, _ ->
+            handleKeyEvent(
+                view,
+                keyCode
+            )
         }
     }
 
+    /**
+     * Return back to MainActivity screen
+     */
 
+    fun saveSettings(){
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
+    }
 
     /**
-     * Saves any changes to preferences made in settings menu and returns to MainActivity.
+     * Helper method, if enter key is pressed then close the on-screen keyborad
+     *
+     * @param view View
+     * @param keyCode Keycode
      */
-    private fun saveSettings() {
 
-
-
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+    fun handleKeyEvent(view: View, keyCode: Int): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            // Hide the keyboard
+            val inputMethodManager =
+                getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+            return true
+        }
+        return false
     }
 }
