@@ -1,17 +1,18 @@
 package au.edu.jcu.utilityapp.eyecare
 
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.content.ContextCompat.startActivity
+import androidx.databinding.BindingAdapter
 import au.edu.jcu.utilityapp.eyecare.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
-
-//    var intervalTimer: EyeTimer = EyeTimer()
-//    var breakTimer: EyeTimer = EyeTimer()
 
     lateinit var binding: ActivitySettingsBinding
 
@@ -20,6 +21,8 @@ class SettingsActivity : AppCompatActivity() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.saveBtn.setOnClickListener { saveSettings() }
+
+
         binding.intervalInput.setOnKeyListener { view, keyCode, _ ->
             handleKeyEvent(
                 view,
@@ -33,6 +36,8 @@ class SettingsActivity : AppCompatActivity() {
      */
 
     fun saveSettings() {
+
+
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
     }
@@ -54,4 +59,5 @@ class SettingsActivity : AppCompatActivity() {
         }
         return false
     }
+
 }
