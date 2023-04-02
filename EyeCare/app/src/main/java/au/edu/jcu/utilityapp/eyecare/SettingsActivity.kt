@@ -32,7 +32,7 @@ class SettingsActivity : AppCompatActivity() {
      * Return back to MainActivity screen
      */
 
-    fun saveSettings(){
+    fun saveSettings() {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
     }
