@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".SettingsActivity">
+
+        <TextView
+            android:id="@+id/settings_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/settings_title"
+            android:textSize="40sp" />
+
+        <ImageView
+            android:id="@+id/icon_work_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/enter_work_time_in_minutes"
+            app:layout_constraintBottom_toBottomOf="@+id/work_time_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/work_time_container"
+            app:srcCompat="@drawable/time_ic" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/work_time_container"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="@string/new_work_time"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/icon_work_time"
+            app:layout_constraintTop_toBottomOf="@id/settings_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/setTimeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:maxLines="1">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/icon_break_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/enter_break_time_in_seconds"
+            app:layout_constraintBottom_toBottomOf="@+id/break_time_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/break_time_container"
+            app:srcCompat="@drawable/time_ic" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/break_time_container"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/new_break_time"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/icon_break_time"
+            app:layout_constraintTop_toBottomOf="@+id/work_time_container">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/setBreakEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:maxLines="1">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/icon_play_sound"
+            android:layout_width="wrap_content"
+            android:contentDescription="@string/play_sound"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/play_sound"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/play_sound"
+            app:srcCompat="@drawable/play_sound_ic" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/play_sound"
+            android:layout_width="0dp"
+            android:textSize="16sp"
+            android:checked="true"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/play_sound"
+            app:layout_constraintEnd_toEndOf="@+id/break_time_container"
+            app:layout_constraintStart_toStartOf="@+id/break_time_container"
+            app:layout_constraintTop_toBottomOf="@+id/break_time_container" />
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/save_changes"
+            app:layout_constraintEnd_toEndOf="@+id/play_sound"
+            app:layout_constraintStart_toStartOf="@+id/play_sound"
+            app:layout_constraintTop_toBottomOf="@+id/play_sound" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Eye Timer</string>
+    <string name="start">Start</string>
+    <string name="time">Time</string>
+    <string name="save_changes">Save changes</string>
+    <string name="reset">Reset</string>
+    <string name="settings">Settings</string>
+    <string name="timer_display">00:00</string>
+    <string name="settings_title">Settings</string>
+    <string name="new_work_time">Enter work time (minutes)</string>
+    <string name="new_break_time">Enter break time (seconds)</string>
+    <string name="play_sound">Play sound</string>
+    <string name="enter_work_time_in_minutes">Enter work time in minutes</string>
+    <string name="enter_break_time_in_seconds">Enter break time in seconds</string>
+</resources>
